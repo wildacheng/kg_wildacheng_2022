@@ -1,3 +1,12 @@
+//create obj map for where key = num and value = phonetic equivalent
+//create function that takes in array of nums
+//map through the array of nums
+//change each num to array of strings
+//edge case - if the num is a single integer - find matching value & add to result
+//else for each num string concat and store in helper variable
+//if its the last element push the helper variable's value into result
+//after the mapping is done take the result array and join with a ','
+
 const numStrMap = {
   0: 'Zero',
   1: 'One',
@@ -11,16 +20,7 @@ const numStrMap = {
   9: 'Nine',
 };
 
-//create obj map for where key = num and value = phonetic equivalent
-//create function that takes in array of nums
-//map through the array of nums
-//change each num to array of strings
-//edge case - if the num is a single integer - find matching value & add to result
-//else for each num string concat and store in helper variable
-//if its the last element push the helper variable's value into result
-//after the mapping is done take the result array and join with a ','
-
-const numStrConverter = (intArray) => {
+const numPhoneticConverter = (intArray) => {
   const result = [];
 
   intArray.map((num) => {
@@ -43,5 +43,6 @@ const numStrConverter = (intArray) => {
   return result.join(',');
 };
 
-console.log(numStrConverter([3, 25, 209]));
-//get argument from command line using process.argv slice
+const myArgs = process.argv.slice(2);
+console.log(numPhoneticConverter(myArgs));
+//get argument from command line using process.argv.slice
